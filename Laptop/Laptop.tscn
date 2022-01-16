@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Laptop/laptop.png" type="Texture" id=1]
+
+[node name="Latop" type="StaticBody2D"]
+scale = Vector2( 0.0406123, 0.0406123 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
