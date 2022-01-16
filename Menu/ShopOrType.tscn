@@ -1,0 +1,121 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Choice/assets/yt1s.com-Sci-fi-Background-Loop.ogv" type="VideoStream" id=1]
+[ext_resource path="res://Victims/typeofscamBackground.gd" type="Script" id=2]
+[ext_resource path="res://Choice/Back.gd" type="Script" id=3]
+[ext_resource path="res://Choice/ButtonType.gd" type="Script" id=4]
+[ext_resource path="res://Choice/ShopOrType.gd" type="Script" id=5]
+[ext_resource path="res://Choice/ButtonShop.gd" type="Script" id=6]
+
+[node name="Choice" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_right = 321.0
+margin_bottom = 182.0
+stream = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VideoPlayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -102.5
+margin_top = -47.0
+margin_right = 101.5
+margin_bottom = 79.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxTop" type="HBoxContainer" parent="VideoPlayer/VBoxContainer"]
+margin_right = 204.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonType" type="Button" parent="VideoPlayer/VBoxContainer/HBoxTop"]
+margin_right = 100.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="VideoPlayer/VBoxContainer/HBoxTop/ButtonType"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -7.0
+margin_right = 20.0
+margin_bottom = 7.0
+text = "Scam"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonShop" type="Button" parent="VideoPlayer/VBoxContainer/HBoxTop"]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 61.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="VideoPlayer/VBoxContainer/HBoxTop/ButtonShop"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -16.5
+margin_top = -7.0
+margin_right = 16.5
+margin_bottom = 7.0
+text = "Shop"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxTop2" type="HBoxContainer" parent="VideoPlayer/VBoxContainer"]
+margin_top = 65.0
+margin_right = 204.0
+margin_bottom = 85.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="VideoPlayer/VBoxContainer/HBoxTop2"]
+margin_right = 204.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+script = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="VideoPlayer/VBoxContainer/HBoxTop2/Back"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -16.5
+margin_top = -7.0
+margin_right = 16.5
+margin_bottom = 7.0
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
