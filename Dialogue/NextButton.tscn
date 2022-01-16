@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Dialogue/Label.gd" type="Script" id=1]
+[ext_resource path="res://Dialogue/blue button.png" type="Texture" id=2]
+[ext_resource path="res://Dialogue/NextButton.gd" type="Script" id=3]
+[ext_resource path="res://Dialogue/COURIER.TTF" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 4 )
+
+[node name="NextButtonNode" type="Node2D"]
+
+[node name="NextButton" type="Button" parent="."]
+margin_left = 80.0
+margin_top = 109.0
+margin_right = 242.0
+margin_bottom = 152.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="NextButton"]
+position = Vector2( 81, 20 )
+scale = Vector2( 0.0897957, 0.0822428 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="NextButton"]
+margin_left = 29.0
+margin_top = 1.0
+margin_right = 134.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 1 )
+text = "Next"
+align = 1
+valign = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="NextButton" to="NextButton" method="_on_NextButton_pressed"]
