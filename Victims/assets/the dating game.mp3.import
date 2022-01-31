@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/the dating game.mp3-a1e220766f28f33cba71406727a676df.mp3str"
+
+[deps]
+
+source_file="res://Victims/assets/the dating game.mp3"
+dest_files=[ "res://.import/the dating game.mp3-a1e220766f28f33cba71406727a676df.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
