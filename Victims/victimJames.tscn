@@ -1,0 +1,86 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Victims/Susanback.gd" type="Script" id=1]
+[ext_resource path="res://TextureCharacter.gd" type="Script" id=2]
+[ext_resource path="res://Victims/JamesStart.gd" type="Script" id=4]
+[ext_resource path="res://SharedAssets/Back Button.png" type="Texture" id=5]
+[ext_resource path="res://SharedAssets/image (14).png" type="Texture" id=7]
+[ext_resource path="res://Victims/assets/the dating game.mp3" type="AudioStream" id=9]
+[ext_resource path="res://Victims/assets/JamesProto.png" type="Texture" id=10]
+[ext_resource path="res://Victims/assets/JamesHome.jpg" type="Texture" id=12]
+[ext_resource path="res://SharedAssets/Start Button.png" type="Texture" id=13]
+[ext_resource path="res://SharedAssets/image (13).png" type="Texture" id=14]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JamesBackground" type="TextureRect" parent="."]
+margin_right = 319.0
+margin_bottom = 180.0
+texture = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="JamesBackground"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -104.5
+margin_top = -8.0
+margin_right = 104.5
+margin_bottom = 144.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 10 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="TextureButton" parent="JamesBackground"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 21.5
+margin_top = -34.0
+margin_right = 100.5
+margin_bottom = -6.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 13 )
+texture_hover = ExtResource( 7 )
+expand = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="TextureButton" parent="JamesBackground"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = -35.0
+margin_right = 129.0
+margin_bottom = -6.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 14 )
+expand = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="JamesBackground"]
+stream = ExtResource( 9 )
+autoplay = true
+
+[connection signal="pressed" from="JamesBackground/Start" to="JamesBackground/Start" method="_on_Start_pressed"]
