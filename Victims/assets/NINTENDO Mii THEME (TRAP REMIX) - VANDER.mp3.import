@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/NINTENDO Mii THEME (TRAP REMIX) - VANDER.mp3-41926360cf728858101d1677f26d762a.mp3str"
+
+[deps]
+
+source_file="res://Victims/assets/NINTENDO Mii THEME (TRAP REMIX) - VANDER.mp3"
+dest_files=[ "res://.import/NINTENDO Mii THEME (TRAP REMIX) - VANDER.mp3-41926360cf728858101d1677f26d762a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
