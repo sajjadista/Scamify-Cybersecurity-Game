@@ -13,7 +13,7 @@
 [ext_resource path="res://musicChar.gd" type="Script" id=11]
 [ext_resource path="res://SharedAssets/Music Square Button.png" type="Texture" id=12]
 [ext_resource path="res://SharedAssets/image (15).png" type="Texture" id=13]
-[ext_resource path="res://Victims/Start.gd" type="Script" id=14]
+[ext_resource path="res://Victims/SusanStart.gd" type="Script" id=14]
 
 [node name="test" type="Control"]
 anchor_right = 1.0
@@ -109,3 +109,4 @@ stream = ExtResource( 2 )
 autoplay = true
 
 [connection signal="pressed" from="SusanBackground/Start" to="SusanBackground/Start" method="_on_Start_pressed"]
+[connection signal="pressed" from="SusanBackground/back" to="SusanBackground/back" method="_on_back_pressed"]

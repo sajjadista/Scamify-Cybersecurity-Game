@@ -1,10 +1,10 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Shop/assets/images/wifi_router.png" type="Texture" id=1]
-[ext_resource path="res://.import/store.gd" type="Script" id=2]
+[ext_resource path="res://Shop/store.gd" type="Script" id=2]
 [ext_resource path="res://Shop/assets/images/pc.png" type="Texture" id=3]
-[ext_resource path="res://.import/Hacking tools.gd" type="Script" id=4]
-[ext_resource path="res://.import/Label.gd" type="Script" id=5]
+[ext_resource path="res://Shop/Hacking tools.gd" type="Script" id=4]
+[ext_resource path="res://Shop/Label.gd" type="Script" id=5]
 [ext_resource path="res://Shop/assets/images/phone.png" type="Texture" id=6]
 [ext_resource path="res://Shop/assets/fonts/Kenney Blocks.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Shop/assets/images/ac.png" type="Texture" id=8]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Shop/assets/fonts/Kenney Future.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://Shop/assets/fonts/Kenney Pixel.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://Shop/assets/fonts/Kenney High.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://Shop/ShopExit.gd" type="Script" id=14]
 
 [sub_resource type="DynamicFont" id=15]
 size = 5
@@ -502,6 +503,7 @@ margin_left = 44.0
 margin_top = -7.0
 margin_right = 64.0
 margin_bottom = 13.0
+script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -523,4 +525,4 @@ __meta__ = {
 [connection signal="pressed" from="TabContainer/Hacking tools/RichTextLabel/Control/pc/Button" to="TabContainer/Hacking tools" method="_on_pc_button_pressed"]
 [connection signal="pressed" from="TabContainer/Hacking tools/RichTextLabel/Control/ac/Button" to="TabContainer/Hacking tools" method="_on_ac_Button_pressed"]
 [connection signal="pressed" from="TabContainer/Hacking tools/Not_enough_coin_popup/Button" to="TabContainer/Hacking tools" method="_on_notenough_popup_button_pressed"]
-[connection signal="pressed" from="coins/Button" to="." method="_on_shop_exit_button_pressed"]
+[connection signal="pressed" from="coins/Button" to="coins/Button" method="_on_Button_pressed"]

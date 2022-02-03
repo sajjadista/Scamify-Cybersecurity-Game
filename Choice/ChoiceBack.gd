@@ -2,6 +2,6 @@ extends Button
 
 
 func _pressed():
-	get_tree().change_scene("res://Room.tscn")
+	get_tree().change_scene("res://Room/Room.tscn")
 
 

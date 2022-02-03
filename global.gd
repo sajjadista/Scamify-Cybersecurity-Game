@@ -9,7 +9,11 @@ var save_store_path = 'user://save'
 
 var prevscene #For the back button
 
-var result
+var result = ""
+
+var success = true
+
+var currentVictim = ""
 
 func save_store():
 	var file = File.new()

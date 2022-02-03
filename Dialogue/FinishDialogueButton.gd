@@ -17,4 +17,5 @@ func _ready():
 
 
 func _on_FinishDialogueButton_pressed():
-	get_tree().change_scene("res://Room.tscn")
+	var sceneToLoad = preload("res://Room/Room.tscn")
+	get_tree().change_scene_to(sceneToLoad)

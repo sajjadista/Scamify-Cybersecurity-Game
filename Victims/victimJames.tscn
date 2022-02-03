@@ -6,7 +6,7 @@
 [ext_resource path="res://SharedAssets/Back Button.png" type="Texture" id=5]
 [ext_resource path="res://SharedAssets/image (14).png" type="Texture" id=7]
 [ext_resource path="res://Victims/assets/the dating game.mp3" type="AudioStream" id=9]
-[ext_resource path="res://Victims/assets/JamesProto.png" type="Texture" id=10]
+[ext_resource path="res://SharedAssets/JamesProto.png" type="Texture" id=10]
 [ext_resource path="res://Victims/assets/JamesHome.jpg" type="Texture" id=12]
 [ext_resource path="res://SharedAssets/Start Button.png" type="Texture" id=13]
 [ext_resource path="res://SharedAssets/image (13).png" type="Texture" id=14]
@@ -84,3 +84,4 @@ stream = ExtResource( 9 )
 autoplay = true
 
 [connection signal="pressed" from="JamesBackground/Start" to="JamesBackground/Start" method="_on_Start_pressed"]
+[connection signal="pressed" from="JamesBackground/back" to="JamesBackground/back" method="_on_back_pressed"]
