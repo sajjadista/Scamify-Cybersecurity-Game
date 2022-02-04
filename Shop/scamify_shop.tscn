@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Shop/assets/images/wifi_router.png" type="Texture" id=1]
 [ext_resource path="res://Shop/store.gd" type="Script" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Shop/Hacking tools.gd" type="Script" id=4]
 [ext_resource path="res://Shop/Label.gd" type="Script" id=5]
 [ext_resource path="res://Shop/assets/images/phone.png" type="Texture" id=6]
-[ext_resource path="res://Shop/assets/fonts/Kenney Blocks.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Shop/assets/images/ac.png" type="Texture" id=8]
 [ext_resource path="res://Shop/assets/images/headset.png" type="Texture" id=9]
 [ext_resource path="res://Shop/assets/images/chair.png" type="Texture" id=10]
@@ -14,6 +13,7 @@
 [ext_resource path="res://Shop/assets/fonts/Kenney Pixel.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://Shop/assets/fonts/Kenney High.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://Shop/ShopExit.gd" type="Script" id=14]
+[ext_resource path="res://Shop/assets/fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=15]
 
 [sub_resource type="DynamicFont" id=15]
 size = 5
@@ -95,11 +95,14 @@ font_data = ExtResource( 12 )
 size = 10
 font_data = ExtResource( 13 )
 
+[sub_resource type="BitmapFont" id=22]
+
 [sub_resource type="Theme" id=12]
+default_font = SubResource( 22 )
 
 [sub_resource type="DynamicFont" id=14]
-size = 5
-font_data = ExtResource( 7 )
+size = 10
+font_data = ExtResource( 15 )
 
 [node name="Control" type="Control"]
 anchor_right = 3.224
@@ -487,10 +490,10 @@ margin_bottom = 82.0
 text = "Ok"
 
 [node name="coins" type="Label" parent="."]
-margin_left = 249.0
+margin_left = 222.0
 margin_top = 13.0
-margin_right = 277.0
-margin_bottom = 24.0
+margin_right = 250.0
+margin_bottom = 25.0
 theme = SubResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 14 )
@@ -498,17 +501,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="coins"]
-margin_left = 44.0
-margin_top = -7.0
-margin_right = 64.0
-margin_bottom = 13.0
+[node name="Button" type="Button" parent="."]
+margin_left = 293.0
+margin_top = 6.0
+margin_right = 313.0
+margin_bottom = 26.0
 script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="coins/Button"]
+[node name="Label" type="Label" parent="Button"]
 margin_left = 5.0
 margin_top = 3.0
 margin_right = 17.0
@@ -525,4 +528,4 @@ __meta__ = {
 [connection signal="pressed" from="TabContainer/Hacking tools/RichTextLabel/Control/pc/Button" to="TabContainer/Hacking tools" method="_on_pc_button_pressed"]
 [connection signal="pressed" from="TabContainer/Hacking tools/RichTextLabel/Control/ac/Button" to="TabContainer/Hacking tools" method="_on_ac_Button_pressed"]
 [connection signal="pressed" from="TabContainer/Hacking tools/Not_enough_coin_popup/Button" to="TabContainer/Hacking tools" method="_on_notenough_popup_button_pressed"]
-[connection signal="pressed" from="coins/Button" to="coins/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
