@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Dialogue/COURIER.TTF" type="DynamicFontData" id=1]
-[ext_resource path="res://Dialogue/character_femaleAdventurer_talk.png" type="Texture" id=2]
+[ext_resource path="res://Dialogue/ResultSprite.gd" type="Script" id=2]
 [ext_resource path="res://Dialogue/ResultLabel.gd" type="Script" id=3]
 [ext_resource path="res://Dialogue/program.png" type="Texture" id=4]
 [ext_resource path="res://Dialogue/Label.gd" type="Script" id=5]
 [ext_resource path="res://Dialogue/blue button.png" type="Texture" id=6]
 [ext_resource path="res://Dialogue/FinishDialogueButton.gd" type="Script" id=7]
+[ext_resource path="res://Dialogue/SuccessFail.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -23,9 +24,9 @@ scale = Vector2( 0.120846, 0.120846 )
 texture = ExtResource( 4 )
 
 [node name="CharacterFemaleAdventurerTalk" type="Sprite" parent="."]
-position = Vector2( 87, 85 )
-scale = Vector2( 1.09212, 1.09212 )
-texture = ExtResource( 2 )
+position = Vector2( 93.3971, 103.347 )
+scale = Vector2( 0.5862, 0.5862 )
+script = ExtResource( 2 )
 
 [node name="FinishDialogueButton" type="Button" parent="."]
 margin_left = 156.0
@@ -63,6 +64,19 @@ custom_fonts/font = SubResource( 2 )
 autowrap = true
 clip_text = true
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SuccessFail" type="Label" parent="."]
+margin_left = 203.0
+margin_top = 53.0
+margin_right = 250.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 2 )
+autowrap = true
+clip_text = true
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

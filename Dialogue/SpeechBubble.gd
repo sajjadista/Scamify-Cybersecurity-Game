@@ -9,6 +9,7 @@ var TwoOptions = preload("res://Dialogue/TwoOptions.tscn")
 var NextButton = preload("res://Dialogue/NextButton.tscn")
 var currentNode = NextButton.instance()
 var nextFinish = false
+var victimName = ""
 
 var speakerDirection = "Left"
 func changeDirection():
@@ -19,7 +20,7 @@ func changeDirection():
 		get_node( "HBoxContainer/LeftSpeaking" ).set_flip_h( true )
 		speakerDirection = "Left"
 
-var dialogue = {
+var dialogueSusan = {
 	0 : {
 		"text" : "Hi, Mrs. Susan I found you on your linked in account. I am a project manager. We are hiring a team. You can work from home. Your daily salary is RM200 and more. If u have the intention to work for us please kindly reply this message.",
 		"speaking" : "scammer",
@@ -87,13 +88,114 @@ var dialogue = {
 	}
 }
 
+var dialogueJames = {
+	0 : {
+		"text" : "Good afternoon, Alexa how are u doing today?",
+		"speaking" : "James",
+		"next" : 1
+	},
+	1 : {
+		"text" : "Not really good…. ",
+		"speaking" : "scammer",
+		"next" : 2
+	},
+	2 : {
+		"text" : "What happen to you?",
+		"speaking" : "James",
+		"options" : [
+			{
+				"text": "My cat is sick, he throw up so hard this morning and I had sent him to the vet. The vet says my cat life is at risk, and need an immediate surgery, but I don’t have that much money, what should I do……",
+				"next": 3
+			},
+			{
+				"text": "My boyfriend had an accident this morning, The doctor says he need an immediate surgery, I don’t have that much money, what should I do……",
+				"next": 9
+			}
+		]
+	},
+	
+	
+	3 : {
+		"text" : "My cat is sick, he throw up so hard this morning and I had sent him to the vet. The vet says my cat life is at risk, and need an immediate surgery, but I don’t have that much money, what should I do……",
+		"speaking" : "scammer",
+		"next" : 4
+	},
+	4 : {
+		"text" : "Omg, that’s so bad, anything I can do for you my sweetie?",
+		"speaking" : "James",
+		"next" : 5
+	},
+	5 : {
+		"text" : "Really? U are such a nice guys, can u send me RM 8000?",
+		"speaking" : "scammer",
+		"next" : 6
+	},
+	6 : {
+		"text" : "Give me ur account, I transfer to u now.",
+		"speaking" : "James",
+		"next" : 7
+	},
+	7 : {
+		"text" : "Omg, u saved my cat life. XX bank xx-xxxxxxxxx",
+		"speaking" : "scammer",
+		"next" : 8
+	},
+	8 : {
+		"result" : "success"
+	},
+	9 : {
+		"text" : "My boyfriend had an accident this morning, The doctor says he need an immediate surgery, I don’t have that much money, what should I do……",
+		"speaking" : "scammer",
+		"next" : 10
+	},
+	10 : {
+		"text" : "Wait, u have boyfriend? ",
+		"speaking" : "James",
+		"next" : 11
+	},
+
+	11 : {
+		"text" : "I mean we are just friend, nothing more than that.",
+		"speaking" : "scammer",
+		"next" : 12
+	},
+	
+	12 : {
+		"text" : "Stop lying u vicious woman.",
+		"speaking" : "James",
+		"next" : 13
+	},
+	
+	13 : {
+		"text" : "Please James, help me…",
+		"speaking" : "scammer",
+		"next" : 14
+	},
+	14 : {
+		"result" : "fail"
+	}
+}
+
+var dialogue = []
 
 func _ready():
+	var global = get_node("/root/Global")
+	
+	if global.currentVictim == "Susan":
+		dialogue = dialogueSusan
+		victimName = "Susan"
+	else:
+		dialogue = dialogueJames
+		victimName = "James"
+		
+	if dialogue[speechCounter]["speaking"] != "scammer":
+		changeDirection()
+		
 	loadDialogue()
 
 func loadDialogue():
 	
-	print(speechCounter)
+	var global = get_node("/root/Global")
 	
 	var speechLabel = $HBoxContainer/SpeechLabel
 	if dialogue[speechCounter].has("text"):
@@ -116,12 +218,14 @@ func loadDialogue():
 		if dialogue[speechCounter].has("next"):
 			speechCounter = dialogue[speechCounter]["next"]
 		else:
-			var global = get_node("/root/Global")
+			
 			if dialogue[speechCounter]["result"] == "success":
-				global.result = "Victim: Susan\nResult: Success\nReward: +50 coins, +300XP"
+				global.result = "Victim: " + victimName + "\nResult:\nReward: +50 coins, +300XP"
 				global.coin = global.coin + 50
+				global.success = true
 			else:
-				global.result = "Victim: Susan\nResult: Fail\nReward: +0 coins, +50XP"
+				global.result = "Victim: " + victimName + "\nResult:\nReward: +0 coins, +50XP"
+				global.success = false
 			get_tree().change_scene("res://Dialogue/Result.tscn")
 			
 	

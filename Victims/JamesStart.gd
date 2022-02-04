@@ -17,4 +17,6 @@ func _ready():
 
 #Put the path to James dialogue
 func _on_Start_pressed():
-	get_tree().change_scene("JAMES_DIALOGUE_PATH")
+	var global = get_node("/root/Global")
+	global.currentVictim = "James"
+	get_tree().change_scene("res://Dialogue/ScamDialogue.tscn")

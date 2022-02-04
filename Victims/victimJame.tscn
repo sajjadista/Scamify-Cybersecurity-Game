@@ -1,0 +1,111 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Victims/assets/CafeBackground.jpg" type="Texture" id=1]
+[ext_resource path="res://Victims/assets/NINTENDO Mii THEME (TRAP REMIX) - VANDER.mp3" type="AudioStream" id=2]
+[ext_resource path="res://SharedAssets/JamesProto.png" type="Texture" id=3]
+[ext_resource path="res://SharedAssets/Start Button.png" type="Texture" id=4]
+[ext_resource path="res://SharedAssets/Back Button.png" type="Texture" id=5]
+[ext_resource path="res://Victims/Susanback.gd" type="Script" id=6]
+[ext_resource path="res://SharedAssets/image (13).png" type="Texture" id=7]
+[ext_resource path="res://TextureCharacter.gd" type="Script" id=8]
+[ext_resource path="res://SharedAssets/image (14).png" type="Texture" id=9]
+[ext_resource path="res://SharedAssets/Mute Music Square Button.png" type="Texture" id=10]
+[ext_resource path="res://musicChar.gd" type="Script" id=11]
+[ext_resource path="res://SharedAssets/Music Square Button.png" type="Texture" id=12]
+[ext_resource path="res://SharedAssets/image (15).png" type="Texture" id=13]
+[ext_resource path="res://Victims/JamesStart.gd" type="Script" id=14]
+
+[node name="test" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SusanBackground" type="TextureRect" parent="."]
+margin_right = 319.0
+margin_bottom = 180.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="SusanBackground"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -93.5
+margin_right = 100.5
+margin_bottom = 139.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 3 )
+expand = true
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="TextureButton" parent="SusanBackground"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 21.5
+margin_top = -36.0
+margin_right = 100.5
+margin_bottom = -8.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 9 )
+expand = true
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="TextureButton" parent="SusanBackground"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = -37.0
+margin_right = 129.0
+margin_bottom = -8.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 7 )
+expand = true
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music" type="TextureButton" parent="SusanBackground"]
+visible = false
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -36.5
+margin_top = -39.5
+margin_right = -3.5
+margin_bottom = -5.5
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 12 )
+texture_hover = ExtResource( 13 )
+texture_focused = ExtResource( 10 )
+expand = true
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SusanBackground"]
+stream = ExtResource( 2 )
+autoplay = true
+
+[connection signal="pressed" from="SusanBackground/Start" to="SusanBackground/Start" method="_on_Start_pressed"]
+[connection signal="pressed" from="SusanBackground/back" to="SusanBackground/back" method="_on_back_pressed"]
