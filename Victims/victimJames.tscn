@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Victims/Susanback.gd" type="Script" id=1]
 [ext_resource path="res://TextureCharacter.gd" type="Script" id=2]
 [ext_resource path="res://Victims/JamesStart.gd" type="Script" id=4]
 [ext_resource path="res://SharedAssets/Back Button.png" type="Texture" id=5]
 [ext_resource path="res://SharedAssets/image (14).png" type="Texture" id=7]
-[ext_resource path="res://Victims/assets/the dating game.mp3" type="AudioStream" id=9]
 [ext_resource path="res://SharedAssets/JamesProto.png" type="Texture" id=10]
 [ext_resource path="res://Victims/assets/JamesHome.jpg" type="Texture" id=12]
 [ext_resource path="res://SharedAssets/Start Button.png" type="Texture" id=13]
@@ -78,10 +77,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="JamesBackground"]
-stream = ExtResource( 9 )
-autoplay = true
 
 [connection signal="pressed" from="JamesBackground/Start" to="JamesBackground/Start" method="_on_Start_pressed"]
 [connection signal="pressed" from="JamesBackground/back" to="JamesBackground/back" method="_on_back_pressed"]

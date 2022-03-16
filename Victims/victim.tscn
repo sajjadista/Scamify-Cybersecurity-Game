@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Victims/assets/CafeBackground.jpg" type="Texture" id=1]
-[ext_resource path="res://Victims/assets/NINTENDO Mii THEME (TRAP REMIX) - VANDER.mp3" type="AudioStream" id=2]
+[ext_resource path="res://Dialogue/DialogueBG.jpg" type="Texture" id=2]
 [ext_resource path="res://Victims/assets/Susan.png" type="Texture" id=3]
 [ext_resource path="res://SharedAssets/Start Button.png" type="Texture" id=4]
 [ext_resource path="res://SharedAssets/Back Button.png" type="Texture" id=5]
@@ -9,11 +9,8 @@
 [ext_resource path="res://SharedAssets/image (13).png" type="Texture" id=7]
 [ext_resource path="res://TextureCharacter.gd" type="Script" id=8]
 [ext_resource path="res://SharedAssets/image (14).png" type="Texture" id=9]
-[ext_resource path="res://SharedAssets/Mute Music Square Button.png" type="Texture" id=10]
-[ext_resource path="res://musicChar.gd" type="Script" id=11]
-[ext_resource path="res://SharedAssets/Music Square Button.png" type="Texture" id=12]
-[ext_resource path="res://SharedAssets/image (15).png" type="Texture" id=13]
 [ext_resource path="res://Victims/SusanStart.gd" type="Script" id=14]
+[ext_resource path="res://SelectScams/assets/kisspng-laptop-computer-monitors-clip-art-black-frame-5ac20d3cb7cd16.0329721015226668127529.png" type="Texture" id=15]
 
 [node name="test" type="Control"]
 anchor_right = 1.0
@@ -22,22 +19,47 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SusanBackground" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="."]
+show_behind_parent = true
+margin_left = 3.0
+margin_top = 2.0
 margin_right = 319.0
 margin_bottom = 180.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect2"]
+margin_left = -2.0
+margin_top = -1.0
+margin_right = 315.0
+margin_bottom = 182.0
+texture = ExtResource( 15 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SusanBackground" type="TextureRect" parent="TextureRect2/TextureRect"]
+margin_left = 39.0
+margin_top = 12.0
+margin_right = 279.0
+margin_bottom = 164.0
 texture = ExtResource( 1 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="SusanBackground"]
+[node name="TextureRect" type="TextureRect" parent="TextureRect2/TextureRect/SusanBackground"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -105.0
-margin_top = -10.5
+margin_left = -97.0
+margin_top = -17.0
 margin_right = 104.0
-margin_bottom = 138.5
+margin_bottom = 134.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 3 )
@@ -47,15 +69,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Start" type="TextureButton" parent="SusanBackground"]
+[node name="Start" type="TextureButton" parent="TextureRect2/TextureRect/SusanBackground"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 21.5
-margin_top = -36.0
-margin_right = 100.5
-margin_bottom = -8.0
+margin_left = 72.0
+margin_top = -18.0
+margin_right = 109.0
+margin_bottom = -4.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource( 4 )
@@ -66,13 +88,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="back" type="TextureButton" parent="SusanBackground"]
+[node name="back" type="TextureButton" parent="TextureRect2/TextureRect/SusanBackground"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 64.0
-margin_top = -37.0
-margin_right = 129.0
-margin_bottom = -8.0
+margin_left = 11.0
+margin_top = -19.0
+margin_right = 47.0
+margin_bottom = -4.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource( 5 )
@@ -83,30 +105,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Music" type="TextureButton" parent="SusanBackground"]
-visible = false
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -36.5
-margin_top = -39.5
-margin_right = -3.5
-margin_bottom = -5.5
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture_normal = ExtResource( 12 )
-texture_hover = ExtResource( 13 )
-texture_focused = ExtResource( 10 )
-expand = true
-script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SusanBackground"]
-stream = ExtResource( 2 )
-autoplay = true
-
-[connection signal="pressed" from="SusanBackground/Start" to="SusanBackground/Start" method="_on_Start_pressed"]
-[connection signal="pressed" from="SusanBackground/back" to="SusanBackground/back" method="_on_back_pressed"]
+[connection signal="pressed" from="TextureRect2/TextureRect/SusanBackground/Start" to="TextureRect2/TextureRect/SusanBackground/Start" method="_on_Start_pressed"]
+[connection signal="pressed" from="TextureRect2/TextureRect/SusanBackground/back" to="TextureRect2/TextureRect/SusanBackground/back" method="_on_back_pressed"]
