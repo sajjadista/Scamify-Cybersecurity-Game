@@ -1,15 +1,12 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://SelectScams/ToJames.gd" type="Script" id=1]
 [ext_resource path="res://VideoPlayerBackground.gd" type="Script" id=2]
 [ext_resource path="res://SelectScams/ToSusan.gd" type="Script" id=3]
-[ext_resource path="res://musicChar.gd" type="Script" id=4]
 [ext_resource path="res://SelectScams/assets/backgroundAnimation.ogv" type="VideoStream" id=5]
 [ext_resource path="res://SelectScams/assets/phishing.png" type="Texture" id=6]
 [ext_resource path="res://SelectScams/assets/moneydark.png" type="Texture" id=7]
-[ext_resource path="res://SharedAssets/Mute Music Square Button.png" type="Texture" id=8]
 [ext_resource path="res://SelectScams/assets/lovescamDisabled.png" type="Texture" id=9]
-[ext_resource path="res://SharedAssets/Music Square Button.png" type="Texture" id=10]
 [ext_resource path="res://SelectScams/assets/phishingHover.png" type="Texture" id=11]
 [ext_resource path="res://SelectScams/assets/image (18).png" type="Texture" id=12]
 [ext_resource path="res://SelectScams/assets/loveScamHover.png" type="Texture" id=13]
@@ -17,13 +14,13 @@
 [ext_resource path="res://SelectScams/assets/smishing hover.png" type="Texture" id=15]
 [ext_resource path="res://SharedAssets/image (13).png" type="Texture" id=16]
 [ext_resource path="res://SelectScams/assets/hovermoneyScam.png" type="Texture" id=17]
-[ext_resource path="res://SharedAssets/image (15).png" type="Texture" id=18]
 [ext_resource path="res://SelectScams/assets/image (16).png" type="Texture" id=19]
 [ext_resource path="res://SharedAssets/Back Button.png" type="Texture" id=20]
 [ext_resource path="res://SelectScams/assets/image (17).png" type="Texture" id=21]
 [ext_resource path="res://SelectScams/assets/lovescam.png" type="Texture" id=22]
 [ext_resource path="res://SelectScams/SelectScamback.gd" type="Script" id=23]
-[ext_resource path="res://SelectScams/assets/Kryptic Minds - Code 46.mp3" type="AudioStream" id=24]
+[ext_resource path="res://SelectScams/assets/kisspng-laptop-computer-monitors-clip-art-black-frame-5ac20d3cb7cd16.0329721015226668127529.png" type="Texture" id=24]
+[ext_resource path="res://Dialogue/DialogueBG.jpg" type="Texture" id=25]
 
 [sub_resource type="Theme" id=1]
 
@@ -37,15 +34,38 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VideoPlayer" type="VideoPlayer" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="."]
+show_behind_parent = true
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 319.0
+margin_bottom = 180.0
+texture = ExtResource( 25 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect2"]
+margin_left = -2.0
+margin_top = -1.0
+margin_right = 315.0
+margin_bottom = 182.0
+texture = ExtResource( 24 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VideoPlayer" type="VideoPlayer" parent="TextureRect2/TextureRect"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -164.0
-margin_top = -89.5
-margin_right = 156.0
-margin_bottom = 88.5
+margin_left = -120.5
+margin_top = -79.5
+margin_right = 120.5
+margin_bottom = 73.5
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stream = ExtResource( 5 )
@@ -54,28 +74,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VideoPlayer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect2/TextureRect/VideoPlayer"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -94.5
-margin_top = 6.0
-margin_right = 102.5
-margin_bottom = 142.0
+margin_left = -81.5
+margin_top = 10.0
+margin_right = 81.5
+margin_bottom = 122.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VideoPlayer/VBoxContainer"]
-margin_right = 197.0
-margin_bottom = 66.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect2/TextureRect/VideoPlayer/VBoxContainer"]
+margin_right = 163.0
+margin_bottom = 54.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureButton" type="TextureButton" parent="VideoPlayer/VBoxContainer/HBoxContainer2"]
-margin_right = 96.0
-margin_bottom = 66.0
+[node name="TextureButton" type="TextureButton" parent="TextureRect2/TextureRect/VideoPlayer/VBoxContainer/HBoxContainer2"]
+margin_right = 79.0
+margin_bottom = 54.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource( 6 )
@@ -87,10 +107,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton2" type="TextureButton" parent="VideoPlayer/VBoxContainer/HBoxContainer2"]
-margin_left = 100.0
-margin_right = 197.0
-margin_bottom = 66.0
+[node name="TextureButton2" type="TextureButton" parent="TextureRect2/TextureRect/VideoPlayer/VBoxContainer/HBoxContainer2"]
+margin_left = 83.0
+margin_right = 163.0
+margin_bottom = 54.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
@@ -103,16 +123,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VideoPlayer/VBoxContainer"]
-margin_top = 70.0
-margin_right = 197.0
-margin_bottom = 136.0
+[node name="HBoxContainer3" type="HBoxContainer" parent="TextureRect2/TextureRect/VideoPlayer/VBoxContainer"]
+margin_top = 58.0
+margin_right = 163.0
+margin_bottom = 112.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureButton3" type="TextureButton" parent="VideoPlayer/VBoxContainer/HBoxContainer3"]
-margin_right = 96.0
-margin_bottom = 66.0
+[node name="TextureButton3" type="TextureButton" parent="TextureRect2/TextureRect/VideoPlayer/VBoxContainer/HBoxContainer3"]
+margin_right = 79.0
+margin_bottom = 54.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource( 22 )
@@ -124,10 +144,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton4" type="TextureButton" parent="VideoPlayer/VBoxContainer/HBoxContainer3"]
-margin_left = 100.0
-margin_right = 197.0
-margin_bottom = 66.0
+[node name="TextureButton4" type="TextureButton" parent="TextureRect2/TextureRect/VideoPlayer/VBoxContainer/HBoxContainer3"]
+margin_left = 83.0
+margin_right = 163.0
+margin_bottom = 54.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 disabled = true
@@ -140,13 +160,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="back" type="TextureButton" parent="VideoPlayer"]
+[node name="back" type="TextureButton" parent="TextureRect2/TextureRect/VideoPlayer"]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_left = 7.0
-margin_top = -31.0
-margin_right = 72.0
-margin_bottom = -2.0
+margin_left = 10.0
+margin_top = -26.0
+margin_right = 47.0
+margin_bottom = -10.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture_normal = ExtResource( 20 )
@@ -156,28 +176,3 @@ script = ExtResource( 23 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Music" type="TextureButton" parent="VideoPlayer"]
-visible = false
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -37.0
-margin_top = -38.0
-margin_right = -4.0
-margin_bottom = -4.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture_normal = ExtResource( 10 )
-texture_hover = ExtResource( 18 )
-texture_focused = ExtResource( 8 )
-expand = true
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="VideoPlayer"]
-stream = ExtResource( 24 )
-autoplay = true
