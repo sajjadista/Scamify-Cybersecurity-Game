@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Shop/assets/images/wifi_router.png" type="Texture" id=1]
 [ext_resource path="res://Shop/store.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Shop/Hacking tools.gd" type="Script" id=4]
 [ext_resource path="res://Shop/Label.gd" type="Script" id=5]
 [ext_resource path="res://Shop/assets/images/phone.png" type="Texture" id=6]
+[ext_resource path="res://SelectScams/assets/kisspng-laptop-computer-monitors-clip-art-black-frame-5ac20d3cb7cd16.0329721015226668127529.png" type="Texture" id=7]
 [ext_resource path="res://Shop/assets/images/ac.png" type="Texture" id=8]
 [ext_resource path="res://Shop/assets/images/headset.png" type="Texture" id=9]
 [ext_resource path="res://Shop/assets/images/chair.png" type="Texture" id=10]
@@ -14,9 +15,10 @@
 [ext_resource path="res://Shop/assets/fonts/Kenney High.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://Shop/ShopExit.gd" type="Script" id=14]
 [ext_resource path="res://Shop/assets/fonts/Kenney Future Narrow.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Dialogue/DialogueBG.jpg" type="Texture" id=16]
 
 [sub_resource type="DynamicFont" id=15]
-size = 5
+size = 4
 font_data = ExtResource( 11 )
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -114,21 +116,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchor_right = 3.244
-anchor_bottom = 3.556
-margin_right = -718.08
-margin_bottom = -456.08
-color = Color( 0.427451, 0.917647, 1, 1 )
+[node name="TextureRect2" type="TextureRect" parent="."]
+show_behind_parent = true
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 319.0
+margin_bottom = 180.0
+texture = ExtResource( 16 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect2"]
+margin_left = -2.0
+margin_top = -1.0
+margin_right = 315.0
+margin_bottom = 182.0
+texture = ExtResource( 7 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="store_header" type="Label" parent="."]
-margin_left = 15.0
-margin_top = 8.0
-margin_right = 57.0
-margin_bottom = 25.0
+margin_left = 42.0
+margin_top = 14.0
+margin_right = 61.0
+margin_bottom = 31.0
 rect_scale = Vector2( 3.51069, 3.06426 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 15 )
@@ -142,10 +157,10 @@ __meta__ = {
 [node name="TabContainer" type="TabContainer" parent="."]
 anchor_right = 1.319
 anchor_bottom = 1.378
-margin_left = -3.0
+margin_left = 42.0
 margin_top = 8.0
-margin_right = -99.08
-margin_bottom = -64.04
+margin_right = -144.08
+margin_bottom = -85.04
 theme = SubResource( 4 )
 custom_colors/font_color_bg = Color( 0.129412, 0.0588235, 0.0588235, 1 )
 custom_styles/tab_fg = SubResource( 5 )
@@ -169,8 +184,8 @@ script = ExtResource( 4 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 1.0
-margin_right = -17.0
-margin_bottom = 217.0
+margin_right = 2.0
+margin_bottom = -1.0
 theme = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -183,10 +198,10 @@ __meta__ = {
 }
 
 [node name="wifi" type="Panel" parent="TabContainer/Hacking tools/RichTextLabel/Control"]
-margin_left = 14.0
+margin_left = 3.0
 margin_top = 16.0
-margin_right = 128.0
-margin_bottom = 107.0
+margin_right = 93.0
+margin_bottom = 86.0
 theme = SubResource( 9 )
 custom_styles/panel = SubResource( 10 )
 __meta__ = {
@@ -194,7 +209,7 @@ __meta__ = {
 }
 
 [node name="WifiRouter" type="Sprite" parent="TabContainer/Hacking tools/RichTextLabel/Control/wifi"]
-position = Vector2( 58, 39 )
+position = Vector2( 44, 29 )
 scale = Vector2( 0.0329469, 0.0285462 )
 texture = ExtResource( 1 )
 
@@ -204,9 +219,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -17.0
-margin_top = -26.0
+margin_top = -25.0
 margin_right = 19.0
-margin_bottom = -6.0
+margin_bottom = -5.0
 text = "Buy"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -229,10 +244,10 @@ __meta__ = {
 price = 100
 
 [node name="phone" type="Panel" parent="TabContainer/Hacking tools/RichTextLabel/Control"]
-margin_left = 152.0
-margin_top = 14.0
-margin_right = 268.0
-margin_bottom = 107.0
+margin_left = 108.0
+margin_top = 17.0
+margin_right = 198.0
+margin_bottom = 87.0
 theme = SubResource( 9 )
 custom_styles/panel = SubResource( 10 )
 __meta__ = {
@@ -270,15 +285,15 @@ __meta__ = {
 price = 85
 
 [node name="Phone" type="Sprite" parent="TabContainer/Hacking tools/RichTextLabel/Control/phone"]
-position = Vector2( 58, 40 )
+position = Vector2( 46, 31 )
 scale = Vector2( 0.0551874, 0.0493421 )
 texture = ExtResource( 6 )
 
 [node name="headset" type="Panel" parent="TabContainer/Hacking tools/RichTextLabel/Control"]
-margin_left = 156.0
-margin_top = 247.0
-margin_right = 272.0
-margin_bottom = 336.0
+margin_left = 108.0
+margin_top = 249.0
+margin_right = 198.0
+margin_bottom = 319.0
 theme = SubResource( 9 )
 custom_styles/panel = SubResource( 10 )
 __meta__ = {
@@ -316,15 +331,15 @@ __meta__ = {
 }
 
 [node name="Headset" type="Sprite" parent="TabContainer/Hacking tools/RichTextLabel/Control/headset"]
-position = Vector2( 56, 44 )
+position = Vector2( 44, 33 )
 scale = Vector2( 0.06475, 0.04125 )
 texture = ExtResource( 9 )
 
 [node name="chair" type="Panel" parent="TabContainer/Hacking tools/RichTextLabel/Control"]
-margin_left = 15.0
+margin_left = 4.0
 margin_top = 132.0
-margin_right = 131.0
-margin_bottom = 224.0
+margin_right = 94.0
+margin_bottom = 202.0
 theme = SubResource( 9 )
 custom_styles/panel = SubResource( 10 )
 __meta__ = {
@@ -332,7 +347,7 @@ __meta__ = {
 }
 
 [node name="Chair" type="Sprite" parent="TabContainer/Hacking tools/RichTextLabel/Control/chair"]
-position = Vector2( 59, 42 )
+position = Vector2( 45, 32 )
 scale = Vector2( 0.0493873, 0.0453432 )
 texture = ExtResource( 10 )
 
@@ -353,20 +368,20 @@ __meta__ = {
 price = 60
 
 [node name="Button" type="Button" parent="TabContainer/Hacking tools/RichTextLabel/Control/chair"]
-margin_left = 40.0
-margin_top = 68.0
-margin_right = 76.0
-margin_bottom = 88.0
+margin_left = 26.0
+margin_top = 47.0
+margin_right = 62.0
+margin_bottom = 67.0
 text = "Buy"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="pc" type="Panel" parent="TabContainer/Hacking tools/RichTextLabel/Control"]
-margin_left = 154.0
-margin_top = 131.0
-margin_right = 269.0
-margin_bottom = 221.0
+margin_left = 108.0
+margin_top = 132.0
+margin_right = 198.0
+margin_bottom = 202.0
 theme = SubResource( 9 )
 custom_styles/panel = SubResource( 10 )
 __meta__ = {
@@ -390,25 +405,25 @@ __meta__ = {
 price = 250
 
 [node name="Button" type="Button" parent="TabContainer/Hacking tools/RichTextLabel/Control/pc"]
-margin_left = 41.0
-margin_top = 66.0
-margin_right = 77.0
-margin_bottom = 86.0
+margin_left = 28.0
+margin_top = 49.0
+margin_right = 64.0
+margin_bottom = 69.0
 text = "Buy"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Pc" type="Sprite" parent="TabContainer/Hacking tools/RichTextLabel/Control/pc"]
-position = Vector2( 57, 44 )
+position = Vector2( 45, 34 )
 scale = Vector2( 0.06526, 0.0528465 )
 texture = ExtResource( 3 )
 
 [node name="ac" type="Panel" parent="TabContainer/Hacking tools/RichTextLabel/Control"]
-margin_left = 14.0
+margin_left = 3.0
 margin_top = 248.0
-margin_right = 130.0
-margin_bottom = 335.0
+margin_right = 93.0
+margin_bottom = 318.0
 theme = SubResource( 9 )
 custom_styles/panel = SubResource( 10 )
 __meta__ = {
@@ -416,7 +431,7 @@ __meta__ = {
 }
 
 [node name="Ac" type="Sprite" parent="TabContainer/Hacking tools/RichTextLabel/Control/ac"]
-position = Vector2( 66, 44 )
+position = Vector2( 50, 31 )
 scale = Vector2( 0.079204, 0.0836669 )
 texture = ExtResource( 8 )
 
@@ -437,10 +452,10 @@ __meta__ = {
 price = 120
 
 [node name="Button" type="Button" parent="TabContainer/Hacking tools/RichTextLabel/Control/ac"]
-margin_left = 41.0
-margin_top = 65.0
-margin_right = 77.0
-margin_bottom = 85.0
+margin_left = 27.0
+margin_top = 49.0
+margin_right = 63.0
+margin_bottom = 69.0
 text = "Buy"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -490,10 +505,10 @@ margin_bottom = 82.0
 text = "Ok"
 
 [node name="coins" type="Label" parent="."]
-margin_left = 222.0
-margin_top = 13.0
-margin_right = 250.0
-margin_bottom = 25.0
+margin_left = 218.0
+margin_top = 15.0
+margin_right = 246.0
+margin_bottom = 27.0
 theme = SubResource( 12 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 14 )
@@ -502,10 +517,10 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 293.0
-margin_top = 6.0
-margin_right = 313.0
-margin_bottom = 26.0
+margin_left = 144.0
+margin_top = 143.0
+margin_right = 161.0
+margin_bottom = 163.0
 script = ExtResource( 14 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -514,7 +529,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="Button"]
 margin_left = 5.0
 margin_top = 3.0
-margin_right = 17.0
+margin_right = 19.0
 margin_bottom = 17.0
 text = "X"
 __meta__ = {
