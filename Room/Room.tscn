@@ -6,6 +6,7 @@
 [ext_resource path="res://Room/Room.gd" type="Script" id=4]
 
 [node name="Room" type="YSort"]
+position = Vector2( -2, -1 )
 script = ExtResource( 4 )
 
 [node name="Scammer" parent="." instance=ExtResource( 1 )]
