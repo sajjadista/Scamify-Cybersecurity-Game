@@ -22,17 +22,17 @@ func changeDirection():
 
 var dialogueSusan = {
 	0 : {
-		"text" : "Hi, Mrs. Susan I found you on your linked in account. I am a project manager. We are hiring a team. You can work from home. Your daily salary is RM200 and more. If u have the intention to work for us please kindly reply this message.",
+		"text" : "Hi, Mrs. Susan I found your linkedin account. I am a project manager. We are hiring a team. You can work from home. Your daily salary is RM200 and more. If u have the intention to work for us please kindly reply this message.",
 		"speaking" : "scammer",
 		"next" : 1
 	},
 	1 : {
-		"text" : "Yes, I’m interested, do I need to send my CV to you?",
+		"text" : "Yes, I’m interested, do I need to send my CV?",
 		"speaking" : "susan",
 		"next" : 2
 	},
 	2 : {
-		"text" : "Yes please, send to this email james@gmail.com",
+		"text" : "Yes please, send it to this email james@gmail.com",
 		"speaking" : "scammer",
 		"next" : 3
 	},
@@ -42,7 +42,7 @@ var dialogueSusan = {
 		"next" : 4
 	},
 	4 : {
-		"text" : "I will contact you again, but before that we need to verified your identity as to register you as a legal employee in our company, so can you provide the snapshot of both sides of your ID card, name, address and bank account.",
+		"text" : "I will contact you again, but before that we need to verify your identity to be able to register you as a legal employee in our company, so can you provide the snapshot of both sides of your ID card, name, address and bank account.",
 		"speaking" : "scammer",
 		"next" : 5
 	},
@@ -51,11 +51,11 @@ var dialogueSusan = {
 		"speaking" : "susan",
 		"options" : [
 			{
-				"text": "The company’s name is Software Production Sdn. Bhd. And the customer service number is 03-XXXXXXXX",
+				"text": "The company’s name is Software Production Sdn. Bhd.",
 				"next": 6
 			},
 			{
-				"text": "The company’s name is Google Sdn. Bhd. And the customer service number is 03-XXXXXXXX",
+				"text": "The company’s name is Google Sdn. Bhd.",
 				"next": 9
 			}
 		]
@@ -66,7 +66,7 @@ var dialogueSusan = {
 		"next" : 7
 	},
 	7 : {
-		"text" : "Alright will send to you in an hour.",
+		"text" : "Alright, i will send to you in an hour.",
 		"speaking" : "susan",
 		"next" : 8
 	},
@@ -90,7 +90,7 @@ var dialogueSusan = {
 
 var dialogueJames = {
 	0 : {
-		"text" : "Good afternoon, Alexa how are u doing today?",
+		"text" : "Good afternoon Alexa, how are you doing today?",
 		"speaking" : "James",
 		"next" : 1
 	},
@@ -100,15 +100,15 @@ var dialogueJames = {
 		"next" : 2
 	},
 	2 : {
-		"text" : "What happen to you?",
+		"text" : "Why? What happened to you?",
 		"speaking" : "James",
 		"options" : [
 			{
-				"text": "My cat is sick, he throw up so hard this morning and I had sent him to the vet. The vet says my cat life is at risk, and need an immediate surgery, but I don’t have that much money, what should I do……",
+				"text": "My cat is really sick, she threw up so hard this morning and sent her to the vet. The vet says my cat life is at risk, and needs an immediate surgery, but I don’t have that much money, I dont know what to do :(",
 				"next": 3
 			},
 			{
-				"text": "My boyfriend had an accident this morning, The doctor says he need an immediate surgery, I don’t have that much money, what should I do……",
+				"text": "My boyfriend had an accident this morning, The doctor says he need an immediate surgery, but I don’t have that much money, and i dont know what should I do……",
 				"next": 9
 			}
 		]
@@ -116,27 +116,27 @@ var dialogueJames = {
 	
 	
 	3 : {
-		"text" : "My cat is sick, he throw up so hard this morning and I had sent him to the vet. The vet says my cat life is at risk, and need an immediate surgery, but I don’t have that much money, what should I do……",
+		"text" : "My cat is really sick, she threw up so hard this morning and sent her to the vet. The vet says my cat life is at risk, and needs an immediate surgery, but I don’t have that much money, I dont know what to do :(",
 		"speaking" : "scammer",
 		"next" : 4
 	},
 	4 : {
-		"text" : "Omg, that’s so bad, anything I can do for you my sweetie?",
+		"text" : "OMG!, that’s so bad, anything I can do for you my sweetie? ;)",
 		"speaking" : "James",
 		"next" : 5
 	},
 	5 : {
-		"text" : "Really? U are such a nice guys, can u send me RM 8000?",
+		"text" : "Really? You are such a nice guy, can u send me RM 8000 please?",
 		"speaking" : "scammer",
 		"next" : 6
 	},
 	6 : {
-		"text" : "Give me ur account, I transfer to u now.",
+		"text" : "Give me ur account, I will transfer it to you now.",
 		"speaking" : "James",
 		"next" : 7
 	},
 	7 : {
-		"text" : "Omg, u saved my cat life. XX bank xx-xxxxxxxxx",
+		"text" : "OMG, you saved my cat's life. XX bank xx-xxxxxxxxx",
 		"speaking" : "scammer",
 		"next" : 8
 	},
@@ -144,24 +144,24 @@ var dialogueJames = {
 		"result" : "success"
 	},
 	9 : {
-		"text" : "My boyfriend had an accident this morning, The doctor says he need an immediate surgery, I don’t have that much money, what should I do……",
+		"text" : "My boyfriend had an accident this morning, The doctor says he need an immediate surgery, but I don’t have that much money, and i dont know what should I do……",
 		"speaking" : "scammer",
 		"next" : 10
 	},
 	10 : {
-		"text" : "Wait, u have boyfriend? ",
+		"text" : "Wait, you have a boyfriend? ",
 		"speaking" : "James",
 		"next" : 11
 	},
 
 	11 : {
-		"text" : "I mean we are just friend, nothing more than that.",
+		"text" : "I mean we are just friends, nothing more.",
 		"speaking" : "scammer",
 		"next" : 12
 	},
 	
 	12 : {
-		"text" : "Stop lying u vicious woman.",
+		"text" : "Stop lying you vicious woman.",
 		"speaking" : "James",
 		"next" : 13
 	},
